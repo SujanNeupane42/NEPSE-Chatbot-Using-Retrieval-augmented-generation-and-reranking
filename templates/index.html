@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #chat-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #chat-header {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        #chat-box {
+            height: 200px; /* Adjusted height for the chat box */
+            overflow-y: scroll;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #text-input,
+        #stream-btn {
+            width: calc(60% - 5px); /* Adjusted width for the text area and button */
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 10px; /* Added margin below the text area */
+            display: inline-block; /* Display inline for side-by-side alignment */
+        }
+        #stream-btn {
+            width: calc(40% - 5px); /* Adjusted width for the button */
+            margin-left: 10px; /* Added margin between text area and button */
+            cursor: pointer;
+        }
+        #text-input:disabled,
+        #stream-btn:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+    </style>
+    <script>
+        var eventSource;
+
+        function startTextStream() {
+            var userInput = document.getElementById("text-input").value;
+            var chatBox = document.getElementById("chat-box");
+            var textInput = document.getElementById("text-input");
+            var streamBtn = document.getElementById("stream-btn");
+
+            // Disable text area and stream button
+            textInput.disabled = true;
+            streamBtn.disabled = true;
+
+            // Append user message to the chat box
+            chatBox.innerHTML += "<p><strong>Q:</strong> " + userInput + "</p>";
+
+            // Clear the input field
+            textInput.value = "";
+
+            // Scroll to the bottom of the chat box
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Close existing event source if any
+            if (eventSource) {
+                eventSource.close();
+            }
+
+            // Create a new EventSource for streaming
+            eventSource = new EventSource("/stream?text=" + encodeURIComponent(userInput));
+
+            var cond = true;
+
+            // Handle incoming messages
+            eventSource.onmessage = function(event) {
+                // Check for end-of-response signal
+                if (event.data === "END") {
+                    // Close the event source
+                    eventSource.close();
+
+                    // Re-enable text area and stream button
+                    textInput.disabled = false;
+                    streamBtn.disabled = false;
+                } else {
+                    var messageText = event.data.replace("</s>", "");
+
+                    if (cond == true) {
+                        chatBox.innerHTML += "<strong>A:</strong> " + event.data;
+                    } else {
+                        // Append the bot's response to the chat box
+                        chatBox.innerHTML += " " + event.data;
+                    }
+                    // Scroll to the bottom of the chat box
+                chatBox.scrollTop = chatBox.scrollHeight;
+                cond = false;
+            };
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-header">NEPSE Chatbot</div>
+
+        <div id="chat-box"></div>
+        <textarea id="text-input" placeholder="Type your text..."></textarea>
+        <button id="stream-btn" onclick="startTextStream()">Message</button>
+    </div>
+
+    <div id="chatbot-explanation" style="margin-top: 20px;">
+        <p>Neural-chat-7B-v3-1 LLM Chatbot using Retrieval Augmented Generation and ReRanking.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+faiss-gpu==1.7.2 
+Flask==3.0.0
+langchain==0.0.344
+tqdm==4.66.1
+pypdf==3.17.1
+transformers==4.34.0
+optimum==1.14.1
+auto-gptq==0.5.1
+sentence-transformers==2.2.2
+FlagEmbedding==1.1.6
+requests==2.31.0
+langid==1.1.6
+
+
+###  python=3.9, for faiss-gpu
