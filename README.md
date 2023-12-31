@@ -1,6 +1,6 @@
 # Retrieval Augmented Generation with Reranking
 
-This project makes use of open-source models to develop a chatbot for NEPSE, Nepal Stock Exchange Ltd, utilizing the Retrieval Augmented Generation technique. The public NEPSE booklet has been utilized for question-answering. This project utilizes the following open-source models:
+This project makes use of open-source models to develop a chatbot for NEPSE, Nepal Stock Exchange Ltd, utilizing the Retrieval Augmented Generation technique. The public NEPSE booklet pdf has been utilized for question-answering. This project utilizes the following open-source models:
 
 1. Intel/neural-chat-7b-v3-1 -> This open-source LLM, originally developed by Intel, and quantized by TheBloke is utilized in this project. Specifically, the 8-bit GPTQ quantized version is utilized due to limited memory.
    
@@ -30,4 +30,6 @@ Reranking Retrievals
 [![Reranking](https://cdn.sanity.io/images/vr8gru94/production/906c3c0f8fe637840f134dbf966839ef89ac7242-3443x1641.png)](http://www.example.com)
 
 Image Source: Pinecone [Image Link](https://www.pinecone.io/learn/series/rag/rerankers/)
+
+A simple frontend using HTML, CSS, and Javascript and a backend using Flask have been developed. The responses/predicted tokens from the LLM are streamed to the front end in real time to reduce user latency and increase user experience. The application is deployed on a **g4dn.xlarge AWS EC2 instance** for real-time inference.
 
