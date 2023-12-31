@@ -40,7 +40,7 @@ With 16 GB of VRAM, all three models will easily fit without any issues. The scr
 
 ![LLM Response Streaming Preview](Images/preview.gif)
 
-*Click on the image to watch the full video.*
+*Click on the link below to watch/download the full video.*
 
 [Watch Video](Images/Recording%202023-12-31%20111153.mp4)
 
