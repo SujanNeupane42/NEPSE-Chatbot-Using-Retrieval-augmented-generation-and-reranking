@@ -32,13 +32,21 @@ The text data from the NEPSE booklet is cleaned, divided into chunks using langc
 
 A simple frontend using HTML, CSS, and JavaScript and a backend using Flask have been developed. The responses/predicted tokens from the LLM are streamed to the frontend in real-time to reduce user latency and increase user experience. The application is deployed on a **g4dn.xlarge AWS EC2 instance** for real-time inference.
 
+
 ![Instance GPU](Images/1.png)
+
 
 With 16 GB of VRAM, all three models will easily fit without any issues. The screenshots and clips below showcase the real-time question-answering capability of the NEPSE chatbot deployed on AWS.
 
+
 ![Screenshot 1](Images/2.png)
+
+
 ![Screenshot 2](Images/3.png)
+
+
 ![Screenshot 3](Images/4.png)
+
 
 **LLM Response Streaming (Like ChatGPT)**
 
@@ -46,9 +54,11 @@ With 16 GB of VRAM, all three models will easily fit without any issues. The scr
   <source src="Images/Recording 2023-12-31 111153.mp4" type="video/mp4">
 </video>
 
+
 # Future Experiments
 1. More powerful LLMs could be tested. I also tried using Google's Gemini-pro API, which gives much better results. However, using an API means we will be sharing our data with a third party. Furthermore, we won't be able to fine-tune the LLM on our custom data too.
 2. Fine-tuning Sentence Transformer and Reranking models for potentially more effective and relevant embedding generation with respect to our custom data.
+
 
 
 # References
