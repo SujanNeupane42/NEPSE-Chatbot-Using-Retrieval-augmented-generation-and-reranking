@@ -2,13 +2,13 @@
 
 Retrieval Augmented Generation with Reranking
 
-[![RAG](https://miro.medium.com/v2/resize:fit:828/format:webp/1*JJVnbQkUByd_NXXg8AD46w.png)](http://www.example.com)
+[![RAG](https://miro.medium.com/v2/resize:fit:828/format:webp/1*JJVnbQkUByd_NXXg8AD46w.png)]
 
 Image Source: M K Pavan Kumar [Image Link](https://medium.com/@manthapavankumar11/advanced-retrieval-augmented-generation-how-reranking-can-change-the-game-d06e12b77074)
 
 Reranking Retrievals
 
-[Reranking](https://cdn.sanity.io/images/vr8gru94/production/906c3c0f8fe637840f134dbf966839ef89ac7242-3443x1641.png)
+[![Reranking](https://cdn.sanity.io/images/vr8gru94/production/906c3c0f8fe637840f134dbf966839ef89ac7242-3443x1641.png)]
 Image Source: Pinecone [Image Link](https://www.pinecone.io/learn/series/rag/rerankers/)
 
 This project makes use of open-source models to develop a chatbot for NEPSE, Nepal Stock Exchange Ltd, utilizing the Retrieval Augmented Generation technique. The public NEPSE booklet has been utilized for question-answering. This project utilizes the following open-source models:
