@@ -2,7 +2,7 @@
 
 Retrieval Augmented Generation with Reranking
 
-[![RAG](image-url)](https://miro.medium.com/v2/resize:fit:828/format:webp/1*JJVnbQkUByd_NXXg8AD46w.png)
+[![RAG](https://miro.medium.com/v2/resize:fit:828/format:webp/1*JJVnbQkUByd_NXXg8AD46w.png)](http://www.example.com)
 
 This project makes use of open-source models to develop a chatbot for NEPSE, Nepal Stock Exchange Ltd, utilizing the Retrieval Augmented Generation technique. The public NEPSE booklet has been utilized for question-answering. This project utilizes the following open-source models:
 
