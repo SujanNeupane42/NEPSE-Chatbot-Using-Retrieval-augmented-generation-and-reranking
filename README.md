@@ -38,7 +38,9 @@ With 16 GB of VRAM, all three models will easily fit without any issues. The scr
 
 **LLM Response Streaming (Like ChatGPT)**
 
-Unfortunately, GitHub does not support embedding videos in README files. You can watch the video by clicking on the following link:
+![LLM Response Streaming Preview](Images/preview.gif)
+
+*Click on the image to watch the full video.*
 
 [Watch Video](Images/Recording%202023-12-31%20111153.mp4)
 
